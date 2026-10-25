@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "id": "my-character",
+  "displayName": "My character",
+  "sheet": "atlas.png",
+  "frameWidth": 192,
+  "frameHeight": 208,
+  "topInset": 32,
+  "alignIdleFeet": true,
+  "_comment": "Classic 1536x1872, 8 columns x 9 rows atlas. Put your own atlas.png next to this example before selecting it.",
+  "animations": {
+    "idle": {
+      "row": 0,
+      "column": 0,
+      "frameCount": 6,
+      "fps": 2,
+      "purpose": "站立和默认动作；其他动作缺失时回退到这里。"
+    },
+    "moveRight": {
+      "frameCount": 8,
+      "fallback": "idle",
+      "purpose": "向右拖动／跑入右边缘；缺失时用待机。",
+      "row": 1,
+      "column": 0,
+      "fps": 8
+    },
+    "moveLeft": {
+      "frameCount": 8,
+      "fallback": "moveRight",
+      "purpose": "向左拖动／跑入左边缘；缺失时镜像向右，再回退待机。",
+      "row": 2,
+      "column": 0,
+      "fps": 8
+    },
+    "wave": {
+      "frameCount": 4,
+      "fallback": "idle",
+      "purpose": "长时间无人碰触时招手；缺失时保持基本动作。",
+      "row": 3,
+      "column": 0,
+      "fps": 8
+    },
+    "jump": {
+      "frameCount": 5,
+      "fallback": "idle",
+      "purpose": "完成提醒／悬停的跳跃；缺失时整个人物上移模拟跳跃。",
+      "row": 4,
+      "column": 0,
+      "fps": 8
+    },
+    "failed": {
+      "frameCount": 8,
+      "fallback": "idle",
+      "purpose": "可选失败表情；不代表任务成功，缺失时用待机。",
+      "row": 5,
+      "column": 0,
+      "fps": 8
+    },
+    "waiting": {
+      "frameCount": 6,
+      "fallback": "idle",
+      "purpose": "等待状态；缺失时用待机。",
+      "row": 6,
+      "column": 0,
+      "fps": 8
+    },
+    "thinking": {
+      "frameCount": 6,
+      "fallback": "waiting",
+      "purpose": "任务运行或聊天生成期间循环；缺失时用等待，再用待机。",
+      "row": 7,
+      "column": 0,
+      "fps": 8
+    },
+    "review": {
+      "frameCount": 6,
+      "fallback": "idle",
+      "purpose": "收尾／回到待机前的过渡；缺失时用待机。",
+      "row": 8,
+      "column": 0,
+      "fps": 8
+    }
+  },
+  "lookDirections": {
+    "enabled": false,
+    "startRow": 9,
+    "startColumn": 0,
+    "frameCount": 16,
+    "purpose": "输入光标的 16 个注视方向；缺失时保持正面待机，不额外生成图片。"
+  },
+  "peekLeftPurpose": "左侧贴边露半身；没有专用姿势时裁取待机的一半。",
+  "peekRightPurpose": "右侧贴边露半身；没有专用姿势时裁取待机的一半。"
+}

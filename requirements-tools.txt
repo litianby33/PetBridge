@@ -1,0 +1,2 @@
+# Optional import/conversion helper only. The desktop app itself needs no Python.
+Pillow>=10,<13

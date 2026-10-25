@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "chatgpt-girl",
+  "displayName": "ChatGPT娘",
+  "sheet": "atlas.png",
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "topInset": 32,
+  "alignIdleFeet": true,
+  "animations": {
+    "idle": {
+      "row": 0,
+      "column": 0,
+      "frameCount": 4,
+      "fps": 2,
+      "fallback": "idle",
+      "purpose": "站立呼吸与眨眼，低帧率循环，避免高频抖动。"
+    },
+    "moveRight": {
+      "row": 1,
+      "column": 0,
+      "frameCount": 4,
+      "fps": 4,
+      "fallback": "idle",
+      "purpose": "左右脚交替：近侧腿迈出、远侧腿经过、远侧腿迈出、近侧腿经过；同侧手臂反向摆动。"
+    },
+    "moveLeft": {
+      "row": 2,
+      "column": 0,
+      "frameCount": 4,
+      "fps": 4,
+      "fallback": "idle",
+      "purpose": "左右脚交替：近侧腿迈出、远侧腿经过、远侧腿迈出、近侧腿经过；同侧手臂反向摆动。"
+    },
+    "wave": {
+      "row": 3,
+      "column": 0,
+      "frameCount": 4,
+      "fps": 4,
+      "fallback": "idle",
+      "purpose": "空闲时抬手招呼，随后回到待机。"
+    },
+    "jump": {
+      "row": 4,
+      "column": 0,
+      "frameCount": 4,
+      "fps": 7,
+      "fallback": "idle",
+      "purpose": "提醒反应：蓄力、离地、最高点、落地；保留原生高度。"
+    },
+    "thinking": {
+      "row": 5,
+      "column": 0,
+      "frameCount": 4,
+      "fps": 3,
+      "fallback": "idle",
+      "purpose": "任务进行中手托下巴、转动目光，持续循环。"
+    },
+    "failed": {
+      "frameCount": 0,
+      "fallback": "idle",
+      "purpose": "可选失败表情，本版复用待机，不把失败显示为成功。"
+    },
+    "waiting": {
+      "frameCount": 0,
+      "fallback": "idle",
+      "purpose": "等待时使用基础站立；没有额外绘制。"
+    },
+    "review": {
+      "frameCount": 0,
+      "fallback": "idle",
+      "purpose": "收尾后回到基础站立；没有额外绘制。"
+    }
+  },
+  "lookDirections": {
+    "enabled": true,
+    "startRow": 6,
+    "startColumn": 0,
+    "frameCount": 16,
+    "purpose": "从正上方起顺时针的16向注视。保持身体正面，仅头部和眼神轻转。"
+  },
+  "peekLeftPurpose": "左侧露半身时优先使用向右看的第4号注视帧。",
+  "peekRightPurpose": "右侧露半身时优先使用向左看的第12号注视帧。",
+  "assetNotes": "AI-generated pixel mascot. Six native action loops; optional states reuse idle. See ARTWORK.md."
+}

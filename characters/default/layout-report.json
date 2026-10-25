@@ -1,0 +1,461 @@
+{
+  "packedFrames": 40,
+  "nativeActions": 6,
+  "gazeFrames": 16,
+  "optionalFallbacks": 3,
+  "actionSharedScale": 0.8951612903225806,
+  "gazeSharedScale": 0.7081339712918661,
+  "jumpLift": 30,
+  "gazeSharedOffsetX": 7,
+  "jumpDisplacementEnhanced": true,
+  "jumpFeet": [
+    248,
+    235,
+    218,
+    248
+  ],
+  "groundedFeetRegistered": true,
+  "metrics": [
+    {
+      "index": 0,
+      "bounds": [
+        34,
+        26,
+        223,
+        248
+      ],
+      "row": 0,
+      "column": 0
+    },
+    {
+      "index": 1,
+      "bounds": [
+        34,
+        26,
+        222,
+        248
+      ],
+      "row": 0,
+      "column": 1
+    },
+    {
+      "index": 2,
+      "bounds": [
+        33,
+        26,
+        229,
+        248
+      ],
+      "row": 0,
+      "column": 2
+    },
+    {
+      "index": 3,
+      "bounds": [
+        34,
+        26,
+        223,
+        248
+      ],
+      "row": 0,
+      "column": 3
+    },
+    {
+      "index": 4,
+      "row": 1,
+      "column": 0,
+      "bounds": [
+        14,
+        26,
+        211,
+        247
+      ]
+    },
+    {
+      "index": 5,
+      "row": 1,
+      "column": 1,
+      "bounds": [
+        30,
+        26,
+        214,
+        247
+      ]
+    },
+    {
+      "index": 6,
+      "row": 1,
+      "column": 2,
+      "bounds": [
+        19,
+        26,
+        217,
+        247
+      ]
+    },
+    {
+      "index": 7,
+      "row": 1,
+      "column": 3,
+      "bounds": [
+        25,
+        26,
+        214,
+        247
+      ]
+    },
+    {
+      "index": 8,
+      "row": 2,
+      "column": 0,
+      "bounds": [
+        41,
+        26,
+        237,
+        248
+      ]
+    },
+    {
+      "index": 9,
+      "row": 2,
+      "column": 1,
+      "bounds": [
+        41,
+        26,
+        237,
+        249
+      ]
+    },
+    {
+      "index": 10,
+      "row": 2,
+      "column": 2,
+      "bounds": [
+        42,
+        26,
+        237,
+        249
+      ]
+    },
+    {
+      "index": 11,
+      "row": 2,
+      "column": 3,
+      "bounds": [
+        41,
+        26,
+        235,
+        248
+      ]
+    },
+    {
+      "index": 12,
+      "bounds": [
+        28,
+        24,
+        225,
+        248
+      ],
+      "row": 3,
+      "column": 0
+    },
+    {
+      "index": 13,
+      "bounds": [
+        34,
+        25,
+        222,
+        248
+      ],
+      "row": 3,
+      "column": 1
+    },
+    {
+      "index": 14,
+      "bounds": [
+        35,
+        25,
+        227,
+        248
+      ],
+      "row": 3,
+      "column": 2
+    },
+    {
+      "index": 15,
+      "bounds": [
+        33,
+        24,
+        225,
+        248
+      ],
+      "row": 3,
+      "column": 3
+    },
+    {
+      "index": 16,
+      "bounds": [
+        28,
+        51,
+        233,
+        248
+      ],
+      "row": 4,
+      "column": 0
+    },
+    {
+      "index": 17,
+      "bounds": [
+        29,
+        17,
+        230,
+        235
+      ],
+      "row": 4,
+      "column": 1
+    },
+    {
+      "index": 18,
+      "bounds": [
+        32,
+        4,
+        233,
+        218
+      ],
+      "row": 4,
+      "column": 2
+    },
+    {
+      "index": 19,
+      "bounds": [
+        29,
+        51,
+        233,
+        248
+      ],
+      "row": 4,
+      "column": 3
+    },
+    {
+      "index": 20,
+      "bounds": [
+        33,
+        25,
+        224,
+        248
+      ],
+      "row": 5,
+      "column": 0
+    },
+    {
+      "index": 21,
+      "bounds": [
+        35,
+        25,
+        228,
+        248
+      ],
+      "row": 5,
+      "column": 1
+    },
+    {
+      "index": 22,
+      "bounds": [
+        38,
+        26,
+        225,
+        248
+      ],
+      "row": 5,
+      "column": 2
+    },
+    {
+      "index": 23,
+      "bounds": [
+        34,
+        25,
+        224,
+        248
+      ],
+      "row": 5,
+      "column": 3
+    },
+    {
+      "index": 24,
+      "bounds": [
+        43,
+        26,
+        242,
+        248
+      ],
+      "row": 6,
+      "column": 0
+    },
+    {
+      "index": 25,
+      "bounds": [
+        42,
+        26,
+        242,
+        248
+      ],
+      "row": 6,
+      "column": 1
+    },
+    {
+      "index": 26,
+      "bounds": [
+        43,
+        26,
+        242,
+        248
+      ],
+      "row": 6,
+      "column": 2
+    },
+    {
+      "index": 27,
+      "bounds": [
+        43,
+        26,
+        242,
+        248
+      ],
+      "row": 6,
+      "column": 3
+    },
+    {
+      "index": 28,
+      "bounds": [
+        43,
+        26,
+        242,
+        248
+      ],
+      "row": 7,
+      "column": 0
+    },
+    {
+      "index": 29,
+      "bounds": [
+        42,
+        27,
+        242,
+        248
+      ],
+      "row": 7,
+      "column": 1
+    },
+    {
+      "index": 30,
+      "bounds": [
+        43,
+        27,
+        242,
+        248
+      ],
+      "row": 7,
+      "column": 2
+    },
+    {
+      "index": 31,
+      "bounds": [
+        43,
+        26,
+        241,
+        248
+      ],
+      "row": 7,
+      "column": 3
+    },
+    {
+      "index": 32,
+      "bounds": [
+        43,
+        26,
+        242,
+        248
+      ],
+      "row": 8,
+      "column": 0
+    },
+    {
+      "index": 33,
+      "bounds": [
+        42,
+        26,
+        242,
+        248
+      ],
+      "row": 8,
+      "column": 1
+    },
+    {
+      "index": 34,
+      "bounds": [
+        43,
+        26,
+        242,
+        248
+      ],
+      "row": 8,
+      "column": 2
+    },
+    {
+      "index": 35,
+      "bounds": [
+        43,
+        26,
+        242,
+        248
+      ],
+      "row": 8,
+      "column": 3
+    },
+    {
+      "index": 36,
+      "bounds": [
+        43,
+        26,
+        242,
+        248
+      ],
+      "row": 9,
+      "column": 0
+    },
+    {
+      "index": 37,
+      "bounds": [
+        42,
+        26,
+        242,
+        248
+      ],
+      "row": 9,
+      "column": 1
+    },
+    {
+      "index": 38,
+      "bounds": [
+        43,
+        26,
+        242,
+        248
+      ],
+      "row": 9,
+      "column": 2
+    },
+    {
+      "index": 39,
+      "bounds": [
+        43,
+        26,
+        241,
+        248
+      ],
+      "row": 9,
+      "column": 3
+    }
+  ],
+  "walkingRevision": "v1.2.2-coarse-pixels-4fps"
+}

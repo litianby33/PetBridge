@@ -1,0 +1,64 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="../"><title>PetBridge · 中文阅读版</title><style>*{box-sizing:border-box}body{margin:0;color:#30313d;background:#f2f3f8;font:16px/1.9 "Segoe UI","Microsoft YaHei",sans-serif}nav{background:#242533;color:#fff;padding:16px 5%;position:sticky;top:0;z-index:2;display:flex;gap:24px;flex-wrap:wrap}nav a{color:#ded8ff;text-decoration:none}nav strong{margin-right:auto}main{max-width:1100px;margin:30px auto;padding:42px 52px;background:white;border-radius:24px;box-shadow:0 12px 40px #2923330b}h1{font-size:34px;line-height:1.4;color:#252436}h2{border-top:1px solid #e8e6ef;padding-top:27px;margin-top:36px;font-size:24px}h3{font-size:19px;margin-top:25px}a{color:#6552a0}img,video{display:block;max-width:100%;height:auto;border-radius:15px;margin:20px auto}pre{background:#272735;color:#f0edf8;padding:22px;border-radius:12px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.7}code{font:14px Consolas,monospace;background:#f0edf7;padding:2px 5px;border-radius:4px}img[src$=".gif"]{image-rendering:pixelated}pre code{background:none;padding:0}blockquote{margin:20px 0;border-left:4px solid #a893d0;background:#f7f5fb;padding:12px 22px;color:#686278}table{border-collapse:collapse;width:100%;margin:20px 0;font-size:14px}td,th{padding:12px;text-align:left;border-bottom:1px solid #e7e6ed}th{background:#f6f4fa}li{margin:8px 0}details{padding:16px 22px;background:#f8f7fb;border-radius:12px}summary{cursor:pointer;font-weight:bold}footer{color:#898492;font-size:13px;margin-top:40px}.tag{color:#827095;font-size:13px;letter-spacing:1px}@media(max-width:700px){main{margin:0;padding:24px 18px;border-radius:0}h1{font-size:28px}nav{position:static;gap:12px}table{display:block;overflow:auto}}</style><nav><strong>PetBridge</strong><a href="docs/PROJECT-PREVIEW.html">项目首页</a><a href="docs/FEATURE-GALLERY.zh-CN.html">功能图鉴</a><a href="docs/CUSTOMIZE-CHARACTER.zh-CN.html">改角色</a><a href="docs/RELEASE-COPY.zh-CN.html">发布文案</a></nav><main><div class="tag">WINDOWS DESKTOP COMPANION · v1.3.1</div><div align="center">
+<h1 id="petbridge">PetBridge</h1>
+<h3 id="让自己的角色陪你聊天和完成任务">让自己的角色，陪你聊天和完成任务</h3>
+<p>Windows 桌面搭档 · 可换角色 · Codex 状态与额度 · ChatGPT / Work 兼容桥接</p>
+<p><strong>v1.3.1</strong> · Windows x64 / .NET Framework 4.8 · 代码 MIT · 独立社区项目</p>
+<p><a href="#开始使用">开始使用</a> · <a href="docs/FEATURE-GALLERY.zh-CN.html">功能图鉴</a> · <a href="docs/CUSTOMIZE-CHARACTER.zh-CN.html">让 Codex 改角色</a></p>
+<p><img alt="PetBridge 桌面搭档" src="docs/media/hero.png" loading="lazy"></p>
+</div>
+<p>任务进行时思考，需要你回答时提醒你，任务结束后弹出气泡。你可以换成自己的角色，也可以让能操作本机项目的 ChatGPT / Codex 帮你适配。</p>
+<blockquote>图片由程序自己的界面代码离线渲染，额度与通知是示例数据。额度胶囊显示 <strong>Codex 额度</strong>；Codex 桌宠聊天是独立会话；普通 ChatGPT 目标通过桌面草稿继续。普通 ChatGPT 完成气泡默认关闭，Work / Codex 完成提醒默认保留。</blockquote>
+<h2 id="先看角色动起来">先看角色动起来</h2>
+<p><img alt="六组动作：待机、左右移动、招手、跳跃、思考" src="docs/media/animations.gif" loading="lazy"></p>
+<p>默认“ChatGPT娘”采用灰黑与少量紫色。六组动作各 4 帧，另有 16 向注视。待机 2 fps、行走 4 fps；失败、等待和收尾复用基础动作，不要求每个角色都画齐。</p>
+<details>
+<summary>展开：慢速行走、逐帧对照和 16 向注视</summary>
+<p><img alt="慢速行走" src="docs/media/walking-slow.gif" loading="lazy"></p>
+<p><img alt="行走帧对照" src="docs/media/walk-frames.png" loading="lazy"></p>
+<p><img alt="十六向注视" src="docs/media/gaze-directions.png" loading="lazy"></p>
+<p>注视从正上方开始顺时针排列，邻近方向差别较细微。<a href="docs/character-preview.mp4">完整视频</a> · <a href="docs/ANIMATIONS.zh-CN.md">动作绑定说明</a></p>
+</details>
+<h2 id="桌面上会发生什么">桌面上会发生什么</h2>
+<table><tr><th>功能</th><th>使用体验</th><th>调整入口</th></tr><tr><td>胶囊工具条</td><td>平时收起，悬停展开聊天、额度和菜单</td><td>外观设置</td></tr><tr><td>Codex 额度</td><td>5 小时与本周剩余、重置时间；完整／悬停极简显示</td><td>提醒设置、额度排版</td></tr><tr><td>任务状态</td><td>进行中思考，旁边显示竖向三点；贴边时保留探头姿态</td><td>任务状态、贴边设置</td></tr><tr><td>任务和额度提醒</td><td>完成绿、低额橙、耗尽暗酒红、重置蓝</td><td>提醒、气泡、颜色设置</td></tr><tr><td>等待你回答</td><td>收到可识别的结构化问题时提醒，点击回桌面对话</td><td>联动设置</td></tr><tr><td>气泡交互</td><td>默认点击收起，可改成收起并跳转；上方通知配合跳跃</td><td>气泡设置</td></tr><tr><td>左右贴边</td><td>跑入边缘、露半身；悬停看额度，点击才展开</td><td>动作、贴边设置</td></tr><tr><td>隐藏与恢复</td><td>右键临时隐藏，点击托盘恢复；前台全屏时避让</td><td>右键菜单、贴边设置</td></tr><tr><td>大小与位置</td><td>拖动人物，Ctrl + 滚轮缩放，设置窗口可拖动</td><td>常用设置</td></tr><tr><td>外观微调</td><td>字体、数字位置、间距、阴影、三点大小与偏移</td><td>额度排版、外观、任务状态</td></tr><tr><td>自己的角色</td><td>图集或单张 PNG，缺动作回退，没有跳跃就模拟跳</td><td>绑定角色</td></tr><tr><td>随应用启动</td><td>可选随 ChatGPT 启动、跟随窗口</td><td>常用设置；默认关闭</td></tr></table>
+<p><img alt="收起工具条和额度" src="docs/media/toolbar-collapsed-native.png" loading="lazy"></p>
+<p><img alt="工具条展开与额度（原尺寸）" src="docs/media/toolbar-expanded-native.png" loading="lazy"></p>
+<p><img alt="额度胶囊原尺寸特写" src="docs/media/quota-closeup.png" loading="lazy"></p>
+<p><img alt="横排与竖排额度" src="docs/media/quota-orientations.png" loading="lazy"></p>
+<p>靠近左右屏幕边缘时自动竖排；横竖排的文字、宽高与整体偏移分别保存。<a href="docs/QUOTA-LAYOUT.zh-CN.html">额度排版与聊天目标</a>。</p>
+<p><img alt="思考与聊天输入框" src="docs/media/activity-chat.png" loading="lazy"></p>
+<p><img alt="左侧图标切换聊天模式" src="docs/media/chat-mode-picker.png" loading="lazy"></p>
+<p>聊天框使用单行胶囊：点击左侧模式图标选择 <strong>Codex</strong> 或 <strong>普通 ChatGPT</strong>，也可用 <code>Alt+1</code> / <code>Alt+2</code> 切换。Codex 在桌宠内回复；普通 ChatGPT 会打开桌面草稿，仍需手动发送。复制和历史记录等功能收进“聊天选项”。</p>
+<p><img alt="五种提醒" src="docs/media/notifications.png" loading="lazy"></p>
+<p><img alt="左右贴边" src="docs/media/edges.png" loading="lazy"></p>
+<p><strong>0% 不会随刷新反复提醒。</strong> 确认任务结束后才判断阈值，同一终态事件最多处理一次；用完时说明重置时间，检测到新额度周期时提醒一次。失败、取消不报成成功。</p>
+<p>查看 <a href="docs/FEATURE-GALLERY.zh-CN.html">全部功能与 12 个设置页</a>。下载后也可以在“详细设置 → 测试工具”亲自预览，不必发送真实聊天。</p>
+<h2 id="开始使用">开始使用</h2>
+<ol>
+<li>在仓库 <strong>Releases</strong> 下载 <code>PetBridge-v1.3.1-windows-x64.zip</code>，完整解压。</li>
+<li>打开其中的 <code>PetBridge</code> 文件夹，双击 <code>Start.cmd</code>，先看默认角色。</li>
+<li>右键人物 → <strong>详细设置 → 绑定角色</strong>，按 <a href="docs/CODEX-ADAPT.zh-CN.md">本机适配指南</a> 绑定自己的环境。</li>
+<li>想换形象，准备自己的 PNG / WebP 图集或静态 PNG，再阅读 <a href="docs/CUSTOMIZE-CHARACTER.zh-CN.html">角色定制</a>。</li>
+</ol>
+<p>源码包用于修改代码，双击 <code>Build.cmd</code> 可以编译。GitHub 自动生成的 Source code ZIP 通常没有 EXE，需要先编译。仅浏览动作、渲染和离线测试不会调用模型。</p>
+<h2 id="交给自己的-chatgpt--codex">交给自己的 ChatGPT / Codex</h2>
+<p>在<strong>能访问本机项目文件并执行命令的环境</strong>中，打开完整解压的文件夹，发送：</p>
+<pre><code>请先阅读 AGENTS.md、README.md 和 docs/CODEX-ADAPT.zh-CN.md。
+帮我在这台 Windows 电脑上编译、适配 PetBridge，绑定我自己的本机 Codex。
+使用真实本机对话编号，不沿用演示编号；保留已有桌宠、登录配置和项目。
+先用默认角色，离线检查动画、气泡和动作回退，再检查本机状态、提问提醒和额度。
+不要为验证向聊天发送消息；说明哪些联动通过、哪些受当前应用版本限制。</code></pre>
+<p>如果当前聊天只能阅读文件，先让它解释适配步骤，再交给本机 Codex 执行。<a href="给Codex的提示词.txt">完整适配提示词</a></p>
+<p>也可以请 Codex 帮你改配色、服装细节或生成动作。用 <a href="docs/CUSTOMIZE-CHARACTER.zh-CN.html">角色改造提示词</a>，先确认设计和绘图范围，保留原图，再接入角色。</p>
+<h2 id="联动范围">联动范围</h2>
+<table><tr><th>来源</th><th>支持范围</th><th>条件与限制</th></tr><tr><td>本机 Codex</td><td>任务状态、结束事件、可识别的提问</td><td>只读结构化任务记录</td></tr><tr><td>桌面 Work / 云端 Codex</td><td>兼容桥接状态与完成提醒</td><td>依赖已安装 app-tools，应用需运行</td></tr><tr><td>普通 ChatGPT</td><td>联动与完成气泡默认关闭；提问提醒独立控制</td><td>异步问题不保证导出等待标志</td></tr><tr><td>桌宠输入框</td><td>Codex 在桌宠内回复；普通 ChatGPT 带到桌面草稿</td><td>普通目标仍需在桌面点发送，回复在桌面查看</td></tr><tr><td>5 小时 / 本周额度</td><td>Codex 账号额度与重置时间</td><td>不代表普通 ChatGPT 各模型的通用额度</td></tr></table>
+<p>兼容桥接约 2.5 秒检查最近 50 个及置顶聊天，应用版本变化可能需要适配。数据缺失、等待回答不算成功完成；不通过正文问号猜问题。桥接不是稳定的官方外部接口。</p>
+<h2 id="开发与素材">开发与素材</h2>
+<pre><code>.\scripts\Build.ps1
+.\scripts\Test.ps1
+python .\tools\package_release.py --output ..\release</code></pre>
+<p>Windows x64 / .NET Framework 4.8，无 NuGet 依赖。角色导入才需要 Python + Pillow；日常运行动画不需要 Python。配置在 <code>%LOCALAPPDATA%\PetBridge\profile</code>，私人角色放仓库外；<code>PETBRIDGE_DATA_DIR</code> 用于隔离测试。</p>
+<p>默认角色和商标见 <a href="characters/default/ARTWORK.md">ARTWORK.md</a>，绘图提示词见 <a href="docs/CHARACTER-PROMPTS.md">CHARACTER-PROMPTS.md</a>。GPT-muse 为可选单独导入项，上游再分发许可未知，公共包不包含它或作者私人角色的图片。<a href="THIRD_PARTY_NOTICES.md">素材来源</a></p>
+<table><tr><th>想做什么</th><th>文档</th></tr><tr><td>看全功能与设置</td><td><a href="docs/FEATURE-GALLERY.zh-CN.html">功能图鉴</a></td></tr><tr><td>绑定自己的电脑</td><td><a href="docs/CODEX-ADAPT.zh-CN.md">本机适配</a></td></tr><tr><td>换角色、改形象</td><td><a href="docs/CUSTOMIZE-CHARACTER.zh-CN.html">角色定制</a></td></tr><tr><td>复制发布介绍</td><td><a href="docs/RELEASE-COPY.zh-CN.html">发布文案</a></td></tr><tr><td>动作映射与备用动作</td><td><a href="docs/ANIMATIONS.zh-CN.md">动画说明</a></td></tr><tr><td>故障处理 / 开发入口</td><td><a href="docs/TROUBLESHOOTING.zh-CN.md">排错</a> · <a href="docs/ARCHITECTURE.md">架构</a></td></tr></table>
+<p>PetBridge 是独立社区项目，非 OpenAI 官方产品。代码 MIT；角色与标识按各自说明。发布包使用文件白名单，并扫描运行数据、个人路径和私有素材。</p>
+<h3 id="分别控制聊天联动">分别控制聊天联动</h3>
+<p>在「设置 → 联动设置」分别控制普通 ChatGPT 聊天、Work / 云端 Codex 和提问提醒。普通聊天联动默认关闭，不参与思考、三点状态和完成气泡；Work 与本地 Codex 的完成提醒保留。提问提醒独立开启时，桥接仍只读检查等待回复状态。普通聊天完成气泡还需在「提醒设置」中单独开启，单开完成提醒不会绕过已关闭的联动。关闭后重新开启不会补弹已处理的旧完成消息。</p><footer>本地阅读版；GitHub 首页由 README.md 展示。图片与 GIF 随项目保存，无需登录即可阅读。</footer></main></html>

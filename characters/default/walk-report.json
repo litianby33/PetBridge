@@ -1,0 +1,92 @@
+{
+  "replacedRows": [
+    1,
+    2
+  ],
+  "sharedScale": 0.5254437869822485,
+  "otherPixelsUnchanged": true,
+  "choreography": "near-contact,far-passing,far-contact,near-passing",
+  "metrics": [
+    {
+      "row": 1,
+      "column": 0,
+      "bounds": [
+        14,
+        26,
+        211,
+        247
+      ]
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "bounds": [
+        30,
+        26,
+        214,
+        247
+      ]
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "bounds": [
+        19,
+        26,
+        217,
+        247
+      ]
+    },
+    {
+      "row": 1,
+      "column": 3,
+      "bounds": [
+        25,
+        26,
+        214,
+        247
+      ]
+    },
+    {
+      "row": 2,
+      "column": 0,
+      "bounds": [
+        41,
+        26,
+        237,
+        248
+      ]
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "bounds": [
+        41,
+        26,
+        237,
+        249
+      ]
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "bounds": [
+        42,
+        26,
+        237,
+        249
+      ]
+    },
+    {
+      "row": 2,
+      "column": 3,
+      "bounds": [
+        41,
+        26,
+        235,
+        248
+      ]
+    }
+  ],
+  "sha256": "788a725158d8a2129aa302730fd05b4b36b0ebd9bc83497125a103d1a0a84884"
+}

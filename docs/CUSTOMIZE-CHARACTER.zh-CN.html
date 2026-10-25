@@ -1,0 +1,35 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="./"><title>PetBridge · 中文阅读版</title><style>*{box-sizing:border-box}body{margin:0;color:#30313d;background:#f2f3f8;font:16px/1.9 "Segoe UI","Microsoft YaHei",sans-serif}nav{background:#242533;color:#fff;padding:16px 5%;position:sticky;top:0;z-index:2;display:flex;gap:24px;flex-wrap:wrap}nav a{color:#ded8ff;text-decoration:none}nav strong{margin-right:auto}main{max-width:1100px;margin:30px auto;padding:42px 52px;background:white;border-radius:24px;box-shadow:0 12px 40px #2923330b}h1{font-size:34px;line-height:1.4;color:#252436}h2{border-top:1px solid #e8e6ef;padding-top:27px;margin-top:36px;font-size:24px}h3{font-size:19px;margin-top:25px}a{color:#6552a0}img,video{display:block;max-width:100%;height:auto;border-radius:15px;margin:20px auto}pre{background:#272735;color:#f0edf8;padding:22px;border-radius:12px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.7}code{font:14px Consolas,monospace;background:#f0edf7;padding:2px 5px;border-radius:4px}img[src$=".gif"]{image-rendering:pixelated}pre code{background:none;padding:0}blockquote{margin:20px 0;border-left:4px solid #a893d0;background:#f7f5fb;padding:12px 22px;color:#686278}table{border-collapse:collapse;width:100%;margin:20px 0;font-size:14px}td,th{padding:12px;text-align:left;border-bottom:1px solid #e7e6ed}th{background:#f6f4fa}li{margin:8px 0}details{padding:16px 22px;background:#f8f7fb;border-radius:12px}summary{cursor:pointer;font-weight:bold}footer{color:#898492;font-size:13px;margin-top:40px}.tag{color:#827095;font-size:13px;letter-spacing:1px}@media(max-width:700px){main{margin:0;padding:24px 18px;border-radius:0}h1{font-size:28px}nav{position:static;gap:12px}table{display:block;overflow:auto}}</style><nav><strong>PetBridge</strong><a href="PROJECT-PREVIEW.html">项目首页</a><a href="FEATURE-GALLERY.zh-CN.html">功能图鉴</a><a href="CUSTOMIZE-CHARACTER.zh-CN.html">改角色</a><a href="RELEASE-COPY.zh-CN.html">发布文案</a></nav><main><div class="tag">WINDOWS DESKTOP COMPANION · v1.3.1</div><h1 id="换角色也可以请-codex-帮你改形象">换角色，也可以请 Codex 帮你改形象</h1>
+<p>先确定素材来源和改动范围，保留原图，试用满意后再设为默认。</p>
+<h2 id="已有角色素材">已有角色素材</h2>
+<p>把素材和完整解压的 PetBridge 文件夹交给本机 Codex，发送：</p>
+<pre><code>请阅读 AGENTS.md 和 docs/ANIMATIONS.zh-CN.md。
+把我的素材接入 PetBridge，先不要改画。查看实际图集，为每个动作填写
+purpose、row、column、frameCount、fps 和 fallback，不凭文件名猜位置。
+缺少动作就回退；没有跳跃时模拟整体上移后落下。
+素材放本机私有角色目录，不加入公共仓库，不覆盖原图和现有角色。
+先验证配置并离线预览，让我看过再保存为默认。
+素材位置：我附上的文件或另外给你的本机路径。</code></pre>
+<p>支持透明静态 PNG、PNG / WebP 图集和 <code>pet.json</code> 文件夹。常见 8×9、8×11 图集可导入；自定义网格需要实际查看和配置。</p>
+<h2 id="让-codex-帮你改人物形象">让 Codex 帮你改人物形象</h2>
+<p>可以换配色、调整服装、修手、改发饰，也可以先设计一个新角色。修改图片需当前环境有可用的图像编辑／生成工具。没有工具时，先完成软件适配并说明素材需求。</p>
+<p>复制这段，把方括号换成自己的想法：</p>
+<pre><code>我想改 PetBridge 的人物形象。先阅读项目的角色和动画说明，查看参考图。
+希望改成：[例如：灰蓝配色、短发、简洁外套、小狐狸耳朵]。
+希望保留：[例如：原角色比例、像素密度、轮廓和表情]。
+
+先只给一张透明背景的正面站立设计图，让我确认，不生成整套动作。
+优先用当前已有的图像工具，不自行改用收费 API，不索要密钥。
+先说明预计生成几张图，控制消耗，不重复画已经满意的部分。
+保留原始素材，把新版本放私有目录；不公开私人角色或照搬来源不明素材。
+
+确认外观后，再做必要的待机、左右走路、招手、跳跃和思考。
+走路必须左右脚交替，逐帧核对，不能把同一个姿势抖动当成走路。
+统一人物大小和脚底位置，待机低帧率；可选缺失动作复用基础动作。
+每段写清用途、位置、帧数、fps 和备用动作。
+给我静态帧对照及可播放预览，检查空白帧、越界、抖动，再接入项目。
+不要改动我电脑上的其他桌宠。</code></pre>
+<p>这段提示词本身不会开始绘图；你交给自己的助手并确认设计后才继续。换成现成图不需要重新生成。</p>
+<h2 id="一张图也能先用">一张图也能先用</h2>
+<table><tr><th>已有素材</th><th>可以先得到什么</th></tr><tr><td>单张站立图</td><td>站立、拖动、气泡、额度、贴边半身；跳跃模拟</td></tr><tr><td>待机 + 思考</td><td>任务进行时切换思考，结束后回待机</td></tr><tr><td>左右走路</td><td>拖动／跑向边缘时播放</td></tr><tr><td>招手 + 原生跳跃</td><td>空闲招手、通知时播放自己的跳跃</td></tr><tr><td>16 向注视</td><td>桌宠输入框看向光标、合适的贴边探头图</td></tr></table>
+<p>失败、等待、收尾是可选动作，没有就写 <code>frameCount: 0</code> 和备用动作，不用空白格冒充。</p>
+<p>临时试用：<code>PetBridge.exe --character &quot;角色目录\character.json&quot; --offline</code>。满意后：右键 → 详细设置 → 绑定角色 → 选择自己的 <code>character.json</code>，下次启动生效。绑定编号和私人素材都不需要发给作者。</p><footer>本地阅读版；GitHub 首页由 README.md 展示。图片与 GIF 随项目保存，无需登录即可阅读。</footer></main></html>
