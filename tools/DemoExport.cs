@@ -1,4 +1,4 @@
-﻿// Offline documentation renderer. Compile separately with scripts/Export-Demos.ps1.
+// Offline documentation renderer. Compile separately with scripts/Export-Demos.ps1.
 // Uses real product paint/control code with synthetic state; never opens conversations.
 using System;
 using System.IO;
@@ -29,7 +29,7 @@ namespace PetBridge {
         static void Save(Bitmap b,string name){b.Save(Path.Combine(output,name),ImageFormat.Png);b.Dispose();}
         static Bitmap Notification(PetForm p,string kind,string headline,string detail){using(var n=new NoticeCard(p)){Set(n,"kind",kind);Set(n,"headline",headline);Set(n,"detail",detail);Set(n,"progress",1.0);Set(n,"anchorX",194f);return Painted(n);}}
         [STAThread] public static void Main(string[] args){
-            if(args.Length!=2)throw new ArgumentException("project root and media output required");
+            if(args.Length<2||args.Length>3)throw new ArgumentException("project root and media output required");
             try{SetProcessDpiAwarenessContext(new IntPtr(-4));}catch{}
             output=Path.GetFullPath(args[1]);Directory.CreateDirectory(output);
             Environment.SetEnvironmentVariable("PETBRIDGE_DATA_DIR",Path.Combine(Path.GetTempPath(),"petbridge-docs-"+Guid.NewGuid().ToString("N")));
@@ -39,7 +39,7 @@ namespace PetBridge {
             Directory.CreateDirectory(Program.DataRoot);Application.EnableVisualStyles();Application.SetCompatibleTextRenderingDefault(false);
             using(var p=new PetForm()){
                 p.PrepareDocumentation();
-                var hero=Canvas(1400,570,"PetBridge  /  让桌面搭档，陪你工作");using(var g=Graphics.FromImage(hero))using(var pet=p.DocumentationBody(0,0,true)){g.DrawImageUnscaled(pet,970,100);Label(g,"你的角色 · 你的 Codex · 你的本机配置",56,132);Label(g,"任务状态   /   提问提醒   /   Codex 额度   /   自定义动画",56,205);Label(g,"Windows x64     开放源码     中文适配指南",56,278);Label(g,"先看演示，再把项目交给自己的 ChatGPT / Codex。",56,365);}Save(hero,"hero.png");
+                var hero=Canvas(1400,570,"ChatGPT 桌面端宠物  /  陪你聊天和工作");using(var g=Graphics.FromImage(hero))using(var pet=p.DocumentationBody(0,0,true)){g.DrawImageUnscaled(pet,970,100);Label(g,"你的角色 · 你的 Codex · 你的本机配置",56,132);Label(g,"任务状态   /   提问提醒   /   Codex 额度   /   自定义动画",56,205);Label(g,"Windows x64     开放源码     中文适配指南",56,278);Label(g,"先看演示，再把项目交给自己的 ChatGPT / Codex。",56,365);}Save(hero,"hero.png");if(args.Length==3&&args[2]=="--hero-only")return;
                 var toolbar=Canvas(1000,660,"悬停展开工具条 · 额度跟随布局");using(var g=Graphics.FromImage(toolbar)){using(var body=p.DocumentationBody(0,0,false))g.DrawImageUnscaled(body,80,95);using(var body=p.DocumentationBody(0,0,true))g.DrawImageUnscaled(body,570,95);Label(g,"平时收起，贴近脚边",52,565);Label(g,"悬停展开：聊天 / 额度 / 菜单",530,565);using(var quota=new UsageCard(p,p.Usage))using(var b=Painted(quota)){g.DrawImage(b,new Rectangle(495,430,b.Width,b.Height));}}Save(toolbar,"toolbar-quota.png");
                 using(var quota=new UsageCard(p,p.Usage))using(var closeup=Painted(quota)){closeup.Save(Path.Combine(output,"quota-closeup.png"),ImageFormat.Png);}
                 for(int mode=0;mode<2;mode++){
