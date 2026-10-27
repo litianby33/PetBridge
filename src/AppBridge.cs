@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -78,13 +78,13 @@ namespace PetBridge {
         readonly AppToolsReader reader;readonly Func<string,object,Dictionary<string,object>> call;readonly System.Threading.Timer timer;readonly Action<int> activity;readonly Action<CompletionEvent> complete;readonly Action changed;
         readonly Dictionary<string,AppThreadState> previous=new Dictionary<string,AppThreadState>();readonly Dictionary<string,AppThreadState> pending=new Dictionary<string,AppThreadState>();readonly HashSet<string> delivered=new HashSet<string>();
         readonly double started=DateTimeOffset.UtcNow.ToUnixTimeMilliseconds()/1000.0;int working;bool baseline,disposed;DateTime lastGood=DateTime.MinValue;
-        public bool Connected;public int ActiveCount,KnownChats,KnownRemote,Delivered;public string State="connecting";
+        public UsageTaskChoice[] UsageChoices=new UsageTaskChoice[0];public bool Connected;public int ActiveCount,KnownChats,KnownRemote,Delivered;public string State="connecting";
         public AppChatWatcher(string origin,Action<int> active,Action<CompletionEvent> ended,Action update,Func<string,object,Dictionary<string,object>> testCall=null,Action<InputEvent> input=null,Func<AppThreadState,bool> enabled=null){sourceEnabled=enabled??(t=>true);onInput=input;reader=new AppToolsReader(origin);call=testCall??reader.Call;activity=active;complete=ended;changed=update;if(testCall==null)timer=new System.Threading.Timer(delegate{Poll();},null,100,2500);}
         public void PollOnceForTest(){Poll();}
         public void RefreshPolicy(){SetCount(snapshot.Count(t=>t.Running&&sourceEnabled(t)));}
         void SetCount(int count){if(count==ActiveCount)return;ActiveCount=count;activity(count);}
         void Poll(){if(disposed||Interlocked.CompareExchange(ref working,1,0)!=0)return;try{
-            var page=call("list_threads",new{limit=50});var list=AppState.Threads(page);bool unavailable=false;object missing;if(page.TryGetValue("unavailableSources",out missing)&&missing is IEnumerable)foreach(var value in (IEnumerable)missing)if(Convert.ToString(value)=="chatgpt")unavailable=true;
+            var page=call("list_threads",new{limit=50});var list=AppState.Threads(page);UsageChoices=UsageTaskSelection.FromApp(page);bool unavailable=false;object missing;if(page.TryGetValue("unavailableSources",out missing)&&missing is IEnumerable)foreach(var value in (IEnumerable)missing)if(Convert.ToString(value)=="chatgpt")unavailable=true;
             KnownChats=list.Count(t=>t.Kind=="chatgpt");KnownRemote=list.Count-KnownChats;Connected=!unavailable;State=unavailable?"chatgpt-unavailable":"connected";lastGood=DateTime.UtcNow;
             snapshot=list.ToArray();RefreshPolicy();
             foreach(var t in list){AppThreadState old;if(baseline&&(!previous.TryGetValue(t.Key,out old)||old.Status!=t.Status||old.Updated!=t.Updated))pending[t.Key]=t;previous[t.Key]=t;}

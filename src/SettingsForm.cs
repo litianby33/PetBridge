@@ -52,7 +52,7 @@ namespace PetBridge {
             Number(activity,"三点胶囊大小",(int)Math.Round(s.ActivityScale*100),222,50,150,v=>s.ActivityScale=v/100.0,"%");
             Number(activity,"与人物的基础距离",s.ActivityGap,269,0,100,v=>s.ActivityGap=v,"px");
             ActionButton(activity,"预览三点加载状态（15 秒）",18,316,330,delegate{pet.PreviewActivity();});
-            var activityHint=new Label{Text="也可直接拖动桌面的三点胶囊调整位置。\n贴在左边时，三点显示在右边；反之亦然。\n监听本地 Codex 及桌面应用内的 Chat / Work。",ForeColor=Design.Muted};activityHint.SetBounds(18,363,408,50);activity.Controls.Add(activityHint);
+            var activityHint=new Label{Text="悬停三点看用量，点击卡片标题切换任务。\n贴在左边时，三点显示在右边；反之亦然。\n监听本地 Codex 及桌面应用内的 Chat / Work。",ForeColor=Design.Muted};activityHint.SetBounds(18,363,408,50);activity.Controls.Add(activityHint);Check(activity,"未固定任务时，跟随最近操作的 Codex 对话",s.TokenUsageFollowRecent,426,v=>s.TokenUsageFollowRecent=v);
             Number(bubbles,"提醒气泡上下偏移",s.NoticeOffsetY,28,-500,300,v=>s.NoticeOffsetY=v,"px");
             Check(bubbles,"弹出时带轻微回弹",s.NoticeBounce,84,v=>s.NoticeBounce=v);
             var clickLabel=new Label{Text="任务提醒点击后",ForeColor=Design.Ink};clickLabel.SetBounds(18,137,180,26);bubbles.Controls.Add(clickLabel);
