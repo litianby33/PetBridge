@@ -7,6 +7,8 @@
 /settings*.json
 /runtime-state*.json
 /terminal-reminders*.json
+/task-usage*.json
+/task-usage*.json.tmp
 /startup-error.txt
 /verification-*
 /qa-*

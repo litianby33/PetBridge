@@ -72,7 +72,7 @@ def main():
         text=(ROOT/source).read_text(encoding='utf-8-sig')
         prefix='docs/' if base=='../' else ''
         nav=''.join('<a href="'+prefix+file+'">'+label+'</a>' for file,label in [('PROJECT-PREVIEW.html','项目首页'),('FEATURE-GALLERY.zh-CN.html','功能图鉴'),('CUSTOMIZE-CHARACTER.zh-CN.html','改角色'),('RELEASE-COPY.zh-CN.html','发布文案')])
-        page='<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="'+base+'"><title>ChatGPT 桌面端宠物 · 中文阅读版</title><style>'+CSS+'</style><nav><strong>ChatGPT 桌面端宠物</strong>'+nav+'</nav><main><div class="tag">WINDOWS DESKTOP COMPANION · v1.3.1</div>'+render(text)+'<footer>本地阅读版；GitHub 首页由 README.md 展示。图片与 GIF 随项目保存，无需登录即可阅读。</footer></main></html>'
+        page='<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="'+base+'"><title>ChatGPT 桌面端宠物 · 中文阅读版</title><style>'+CSS+'</style><nav><strong>ChatGPT 桌面端宠物</strong>'+nav+'</nav><main><div class="tag">WINDOWS DESKTOP COMPANION · v1.3.2</div>'+render(text)+'<footer>本地阅读版；GitHub 首页由 README.md 展示。图片与 GIF 随项目保存，无需登录即可阅读。</footer></main></html>'
         (ROOT/destination).write_text(page,encoding='utf-8')
     print('Built '+str(len(TARGETS))+' local reading pages.')
 

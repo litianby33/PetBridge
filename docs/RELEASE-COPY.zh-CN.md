@@ -20,7 +20,7 @@ Windows 体验包、源码、动作演示和中文适配指南都已备好。Pet
 
 ## Release 标题
 
-ChatGPT 桌面端宠物 v1.3.1
+ChatGPT 桌面端宠物 v1.3.2
 
 ## Release 正文
 
@@ -31,6 +31,14 @@ ChatGPT 桌面端宠物 v1.3.1
 起初使用官方宠物时，我觉得它还不够懂我的工作状态：我希望它能跟着任务思考、在需要回答时叫我、完成后告诉我，也能随手看一眼剩余额度。于是，我用 Codex 做了这个更贴合自己使用习惯的 ChatGPT 桌面端宠物，并把它整理成可以自己适配、自己换角色的开源项目。
 
 [功能与动作演示](https://github.com/litianby33/PetBridge#readme) · [本机适配指南](https://github.com/litianby33/PetBridge/blob/main/docs/CODEX-ADAPT.zh-CN.md) · [让 Codex 改角色](https://github.com/litianby33/PetBridge/blob/main/docs/CUSTOMIZE-CHARACTER.zh-CN.md)
+
+### v1.3.2 新增
+
+- **悬停查看 Token**：把鼠标放到任务三点上，查看累计 Token、最近请求上下文和估算输出均速。
+- **选择正在进行的聊天**：点击用量卡片顶部的标题，切换进行中或最近的本机 Codex 聊天；选中后固定显示。
+- **三点位置通过设置调整**：三点禁用鼠标拖动，悬停直接展开用量卡片。
+
+聊天累计 5 小时 / 周额度消耗尚未接入；账号剩余额度胶囊不受影响。输出均速是本机采样估算，包含工具和等待时间。
 
 ### 它能做什么
 
@@ -46,8 +54,8 @@ ChatGPT 桌面端宠物 v1.3.1
 
 | 附件 | 用途 |
 | --- | --- |
-| PetBridge-v1.3.1-windows-x64.zip | Windows 体验包：程序、源码、默认角色和文档 |
-| PetBridge-v1.3.1-source.zip | 编译或修改代码的源码包 |
+| PetBridge-v1.3.2-windows-x64.zip | Windows 体验包：程序、源码、默认角色和文档 |
+| PetBridge-v1.3.2-source.zip | 编译或修改代码的源码包 |
 | SHA256SUMS.txt | 下载文件的 SHA-256 校验值 |
 
 完整解压，进入 PetBridge 文件夹，双击 Start.cmd。右键人物 → 详细设置 → 测试工具，可以预览动作与提醒。绑定自己的环境或换角色，请阅读 README，再把“给Codex的提示词.txt”交给能操作本机项目的 ChatGPT / Codex。

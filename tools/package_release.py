@@ -26,7 +26,7 @@ def public_files(root):
 if __name__ == "__main__":
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--output", required=True)
-    p.add_argument("--version", default="1.3.1")
+    p.add_argument("--version", default="1.3.2")
     args = p.parse_args()
     root = Path(__file__).resolve().parent.parent
     output = Path(args.output).resolve()
