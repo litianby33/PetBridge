@@ -22,7 +22,7 @@ def scan(archive, private_hashes=()):
             name = parts[-1].lower()
             if any(p.lower() in FORBIDDEN_DIRS for p in parts) or "characters/local/" in entry.filename.lower():
                 problems.append(entry.filename + ": private directory")
-            if name in {"auth.json", "settings.json", "settings.qa.json", "startup-error.txt"} or name.startswith(("runtime-state", "terminal-reminders", "qa-", "notice-jump")):
+            if name in {"auth.json", "settings.json", "settings.qa.json", "startup-error.txt"} or name.startswith(("runtime-state", "terminal-reminders", "task-usage", "qa-", "notice-jump")):
                 problems.append(entry.filename + ": runtime file")
             blob = z.read(entry)
             if hashlib.sha256(blob).hexdigest().lower() in private_hashes:
